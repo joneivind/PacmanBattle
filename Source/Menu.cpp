@@ -196,7 +196,7 @@ void Menu::endOfGame(RenderWindow& newWindow, float dt)
 
 	// Create new header based on win condition
 	if (player1->hearts > player2->hearts)
-		endOfRound.setString("Player 2 died!\nPlayer 2 wins!");
+		endOfRound.setString("Player 2 died!\nPlayer 1 wins!");
 
 	else if (player1->hearts > 0 && player2->hearts > 0)
 	{
