@@ -152,7 +152,7 @@ int main()
 	Menu newMenu(playerOne, playerTwo, ghost1, ghost2, points, scoreboard, music);
 
 
-	// New clock
+	// Clock / timers
 	Clock clock;
 	float dt = 0.0f;
 	float loopTime = 0.0f;
@@ -245,13 +245,9 @@ int main()
 
 
 		// Check collision between players and ghosts
-		playerOne.CheckCollisionWithPlayer(playerTwo);
-		playerTwo.CheckCollisionWithPlayer(playerOne);
-
 		playerOne.CheckCollision(ghost1);
-		playerTwo.CheckCollision(ghost1);
-
 		playerOne.CheckCollision(ghost2);
+		playerTwo.CheckCollision(ghost1);
 		playerTwo.CheckCollision(ghost2);
 		
 
