@@ -62,7 +62,8 @@ void Point::checkCollision(Pacman & playerOne, Pacman & playerTwo, Scoreboard & 
 		point.setTextureRect(IntRect(340, 600, 84, 84)); // Change texture
 		isEaten = true; // Hide point
 		coin.setBuffer(bufferCoin);
-		coin.play(); // Play sound
+		if(soundOn)
+			coin.play(); // Play sound
 
 		if (!isBig)
 			playerTwo.score += 500; // Add score to player
