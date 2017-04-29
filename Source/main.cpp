@@ -187,7 +187,7 @@ int main()
 		dt = clock.restart().asSeconds(); // Delta time
 
 
-		// Check if close or escape button is pressed -> close window
+		// Check if close button is pressed -> close window
 		Event evnt;
 		while (window.pollEvent(evnt))
 		{
