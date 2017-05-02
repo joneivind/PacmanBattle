@@ -31,7 +31,7 @@ void Ghost::setDirection(bool newDirection) // Set direction of ghost, 0->right,
 	direction = newDirection;
 }
 
-void Ghost::move(Creature playerOne, Creature playerTwo, float dt, Menu& newMenu) // Move ghost
+void Ghost::move(Creature& playerOne, Creature& playerTwo, float dt, Menu& newMenu) // Move ghost
 {
 	menu = &newMenu;
 

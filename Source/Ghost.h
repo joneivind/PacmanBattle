@@ -21,7 +21,7 @@ class Ghost : public Creature
 	public:
 		Ghost(Vector2f startPosition);
 		void setDirection(bool newDirection);
-		void move(Creature playerOne, Creature playerTwo, float dt, Menu& newMenu);
+		void move(Creature& playerOne, Creature& playerTwo, float dt, Menu& newMenu);
 		void CheckCollisionWithGhost(Ghost& otherGhost);
 		void reset();
 };
