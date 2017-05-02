@@ -152,7 +152,7 @@ int main()
 	Menu newMenu(playerOne, playerTwo, ghost1, ghost2, points, scoreboard, music);
 
 
-	// Clock / timers
+	// New clock
 	Clock clock;
 	float dt = 0.0f;
 	float loopTime = 0.0f;
@@ -187,7 +187,7 @@ int main()
 		dt = clock.restart().asSeconds(); // Delta time
 
 
-		// Check if close button is pressed -> close window
+		// Check if close or escape button is pressed -> close window
 		Event evnt;
 		while (window.pollEvent(evnt))
 		{
@@ -245,9 +245,13 @@ int main()
 
 
 		// Check collision between players and ghosts
+		playerOne.CheckCollisionWithPlayer(playerTwo);
+		playerTwo.CheckCollisionWithPlayer(playerOne);
+
 		playerOne.CheckCollision(ghost1);
-		playerOne.CheckCollision(ghost2);
 		playerTwo.CheckCollision(ghost1);
+
+		playerOne.CheckCollision(ghost2);
 		playerTwo.CheckCollision(ghost2);
 		
 
@@ -303,7 +307,7 @@ int main()
 		window.draw(playerTwo.getSprite());
 		
 		// Draw scoreboard
-		scoreboard.displayScore(playerOne, playerTwo);
+		scoreboard.displayScore();
 
 		// End game if...
 		if (scoreboard.pointsTaken >= maxPoints || playerOne.hearts <= 0 || playerTwo.hearts <= 0)

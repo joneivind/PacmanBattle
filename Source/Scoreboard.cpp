@@ -8,7 +8,7 @@ Scoreboard::Scoreboard(sf::RenderTarget& gameWindow, Pacman& Player1, Pacman& Pl
 	m_renderer = &gameWindow;
 }
 
-void Scoreboard::displayScore(Pacman& Player1, Pacman& Player2)
+void Scoreboard::displayScore()
 {
 	// Get score from players
 	String playerOneScore = sf::String(std::to_string(m_player1->score));
